@@ -44,7 +44,6 @@ def find_matching_photo_ids(face_embeddings, selfie_embedding):
             face["embedding"],
             selfie_embedding
         )
-        print(similarity)
         if similarity >= threshold:
             photo_ids.add(face["photo_id"])
 
