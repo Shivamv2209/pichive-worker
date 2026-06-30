@@ -7,7 +7,8 @@ from face_model import face_app
 
 
 def url_to_image(url):
-    response = requests.get(url)
+    session = requests.Session()
+    response = session.get(url)
     response.raise_for_status()
 
     arr = np.frombuffer(response.content, np.uint8)
